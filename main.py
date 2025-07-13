@@ -1,6 +1,7 @@
 # pip install pymysql or mysqlclient
 # pip install flask-sqlalchemy
 # pip install flask-mail
+# this is comment is added new 
 
 
 from flask import Flask,render_template,request,jsonify,session
