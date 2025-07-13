@@ -1,0 +1,40 @@
+{% extends "template.html" %} 
+{% block body %}
+{% set fname='assets/img/'+posts.bg_image %}
+
+     {% if posts.bg_image.startswith('http') %}
+    <header class="masthead" style="background-image: url('{{ posts.bg_image }}')">
+{% else %}
+    {% set fname = 'assets/img/' + posts.bg_image %}
+    <header class="masthead" style="background-image: url('{{ url_for('static', filename=fname) }}')">
+{% endif %}
+
+
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>{{posts.title}} </h1>
+                            <h2 class="subheading"> {{posts.tag_line}} </h2>
+                            <span class="meta">
+                                Posted by
+                                <a href="#!">Start Bootstrap</a>
+                                on {{posts.date}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p> {{posts.content}} </p><br>
+                        
+                    </div>
+                </div>
+            </div>
+        </article>
+       {% endblock %} 
