@@ -1,0 +1,16 @@
+{
+    "params":{
+        "local_server":"TRUE",
+        "local_uri":"mysql+pymysql://root:@localhost/thecodingthunder",
+        "prod_uri":"mysql+pymysql://root:@localhost/thecodingthunder",
+        "fb_url":"https://www.facebook.com/girish.karhadkar.3/",
+        "tw_url":"https://twitter.com/codingthunder",
+        "gh_url":"https://github.com/codingthunder",
+        "blog_name":"Aditya blog",
+        "user":"adityagkarhadkar@gmail.com",
+        "password":"fqub ziow jexh yptv",
+        "about_text": "Hello I am Aditya and I am learning web development using python",
+        "no_of_posts":4,
+        "upload_location":"D:\\Aditya\\flask study\\tut-2\\static"
+    }
+}

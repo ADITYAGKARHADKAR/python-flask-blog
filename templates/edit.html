@@ -1,0 +1,60 @@
+{% extends "template.html" %} 
+{% block body %}
+       <header class="masthead" style="background-image: url('./static/assets/img/home-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+       <div>
+
+<div class="container mt-5">
+   
+    <a href="/dashboard"><button class="btn btn-primary text-uppercase">Dashboard</button></a>
+    <a href="/logout"><button class="btn btn-primary text-uppercase">Logout</button></a><hr>
+  <h2 class="mb-4">Create/EDIT Post</h2>
+   
+  <form method="POST" enctype="multipart/form-data" action="/edit/{{ content.sno if content else 0 }}">
+    <!-- Title -->
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" name="title" placeholder="Enter post title"  value="{{content.title}}">
+    </div>
+
+    <!-- Content -->
+    <div class="mb-3">
+      <label for="content" class="form-label">Content</label>
+      <textarea class="form-control" id="content" name="content" rows="5" placeholder="Write your post content here..." >{{content.content}} </textarea>
+    </div>
+
+    <!-- Slug -->
+    <div class="mb-3">
+      <label for="slug" class="form-label">Slug</label>
+      <input type="text" class="form-control" id="slug" name="slug" placeholder="Enter URL slug (e.g., 'my-first-post')" value="{{content.slug}}">
+    </div>
+
+    <!-- Tag Line -->
+    <div class="mb-3">
+      <label for="tag_line" class="form-label">Tag Line</label>
+      <input type="text" class="form-control" id="tag_line" name="tag_line" placeholder="Enter a short tag line" value="{{content.tag_line}}">
+    </div>
+
+    <!-- Image Upload -->
+    <div class="mb-3">
+      <label for="image" class="form-label">Image</label>
+      <input type="text" class="form-control" id="image" name="image" placeholder="Enter a short tag line" value="{{content.bg_image}}">
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Submit Post</button>
+  </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+ {% endblock %}   

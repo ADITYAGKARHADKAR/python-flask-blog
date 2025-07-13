@@ -1,0 +1,52 @@
+{% extends "template.html" %} 
+{% block body %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('./static/assets/img/home-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>{{params['blog_name']}} </h1>
+                            <span class="subheading">A Blog Liked by the programmers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+       <div>
+        <h1>Basic Actions</h1>
+        <a href="/edit/0"><button class="btn btn-primary text-uppercase">add a new post</button></a>
+        <a href="/logout"><button class="btn btn-primary text-uppercase">Logout</button></a><br><br><br>
+        <h1>Upload a file</h1>
+        <form action="/uploader" method="post" enctype="multipart/form-data" >
+            <input type="file" name="file1">
+            <input type="submit" class="btn btn-primary text-uppercase" name="submit">
+        </form><br><br>
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">sno</th>
+      <th scope="col">Title</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for c in content%}
+    <tr>
+      <th scope="row">1</th>
+      <td>{{c.sno}} </td>
+      <td>{{c.title}} </td>
+      <td>{{c.date}} </td>
+      <td><a href="/edit/{{c.sno}}"><button class="btn btn-primary text-uppercase">EDIT</button> </a></td>
+      <td>
+        <a href="/delete/{{c.slug}}">
+        <button class="btn btn-primary text-uppercase">DELETE</button> </a></td>
+    </tr>
+   
+  </tbody>
+  {% endfor %}
+</table>
+       </div>
+         {% endblock %}   
+       
